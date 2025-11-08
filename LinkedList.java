@@ -1,6 +1,7 @@
 public class LinkedList {
 	
 	Node head;
+	private int size;
 	
 	class Node{
 		int data;
@@ -9,6 +10,7 @@ public class LinkedList {
 		Node(int data){
 			this.data=data;
 			this.next=null;
+			size++;
 		}
 	}
 	
@@ -46,7 +48,7 @@ public class LinkedList {
 			System.out.println("list is empty");
 			return;
 		}
-		
+		size--;
 		head=head.next;
 	}
 	
@@ -56,7 +58,7 @@ public class LinkedList {
 			return;
 		}
 		
-		
+		size--;
 		//if only one node present
 		if(head.next==null) {
 			head=null;
@@ -87,6 +89,10 @@ public class LinkedList {
 		System.out.println("NULL");
 		
 	}
+
+   public int getSize() {
+	   return size() ;
+   }
 	
 	
 public static void main(String[] args) {
@@ -103,6 +109,7 @@ public static void main(String[] args) {
 	
 	list.deleteLast();
 	list.display();
+	System.out.println(list.getSize());
 	
 	
 }
