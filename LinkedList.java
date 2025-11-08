@@ -15,6 +15,7 @@ public class LinkedList {
 	public void addFirst(int data) {
 		
 		Node newNode=new Node(data);
+		//corner-case
 		if(head==null) {
 			head=newNode;
 			return;
